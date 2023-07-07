@@ -9,27 +9,32 @@
 </head>
 <body>
     <header>
-        <a href="index.html"><img src="img/My project-1 (5).png" alt=""></a>
+        <a href="registro.html"><img src="img/My project-1 (5).png" alt=""></a>
 
         <a href="#menu" class="nav__target"><svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" class="bi nav__icon" viewBox="0 0 16 16">
             <path fill-rule="evenodd" d="M2.5 12a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5z"/>
           </svg></a>
 
         <nav class="nav__links" id="menu">
-            <a href="index.html" class="nav__link">INICIO</a>
             <a href="registro.html" class="nav__link">REGISTRATE</a>
             <a href="login.html" class="nav__link">INICIA SESIÓN</a>
         </nav>
     </header>
 
     <div class="registro">
-        <input type="text" placeholder="Ingresa tu primer nombre">
-        <input type="text" placeholder="Ingresa tu segundo nombre">
-        <input type="text" placeholder="Ingresa tu primer apellido">
-        <input type="text" placeholder="Ingresa tu segundo apellido">
-        <input type="text" placeholder="Ingresa tu correo electrónico">
-        <input type="text" placeholder="Ingresa tu número de celular">
-        <button>Registrar cuenta</button>
+        <label for="email">INGRESA TU EMAIL</label>
+        <br>
+        <input type="email" id="email" placeholder="example@gmail.com">
+        <br>
+        <label for="password">INGRESA TU CONTRASEÑA</label>
+        <br>
+        <input type="password" id="password" placeholder="Contraseña">
+        <br>
+        <button id="singup">Registrar con correo electrónico</button>
+        <br>
+        <button id="singup_with_google">Registrar con Google</button>
+        <br>
+        <button id="singup_with_fb">Registrar con Facebook</button>
     </div>
 
     <footer>
@@ -50,5 +55,71 @@
               </svg></a>
         </div>
     </footer>
+
+    <script type="module">
+        // Import the functions you need from the SDKs you need
+        import { initializeApp } from "https://www.gstatic.com/firebasejs/10.0.0/firebase-app.js";
+        import {getAuth, createUserWithEmailAndPassword, signInWithPopup, GoogleAuthProvider} from "https://www.gstatic.com/firebasejs/10.0.0/firebase-auth.js";
+
+
+        // TODO: Add SDKs for Firebase products that you want to use
+        // https://firebase.google.com/docs/web/setup#available-libraries
+      
+        // Your web app's Firebase configuration
+        const firebaseConfig = {
+          apiKey: "AIzaSyDGu-viLYb69HshT58BOjDlPpKtlMpdq0I",
+          authDomain: "autenticacion-dingo-dong.firebaseapp.com",
+          projectId: "autenticacion-dingo-dong",
+          storageBucket: "autenticacion-dingo-dong.appspot.com",
+          messagingSenderId: "380047822054",
+          appId: "1:380047822054:web:450b572c122fccb3533f27"
+        };
+      
+        // Initialize Firebase
+        const app = initializeApp(firebaseConfig);
+        const auth = getAuth();
+        const provider = new GoogleAuthProvider();
+        document.getElementById("singup").addEventListener("click",function(){
+            const email = document.getElementById("email").value
+            const password = document.getElementById("password").value
+            
+            createUserWithEmailAndPassword(auth, email, password)
+            .then((userCredential) => {
+            // Signed in 
+            const user = userCredential.user;
+            // ...
+                console.log("Creado")
+            })
+            .catch((error) => {
+            const errorCode = error.code;
+            const errorMessage = error.message;
+            // ..
+                console.log(errorCode + errorMessage)
+            });
+            })
+
+        document.getElementById("singup_with_google").addEventListener("click",function(){
+            signInWithPopup(auth, provider)
+                .then((result) => {
+            // This gives you a Google Access Token. You can use it to access the Google API.
+                const credential = GoogleAuthProvider.credentialFromResult(result);
+                const token = credential.accessToken;
+            // The signed-in user info.
+                const user = result.user;
+            // IdP data available using getAdditionalUserInfo(result)
+            // ...
+                console.log("Creado")
+            }).catch((error) => {
+            // Handle Errors here.
+                const errorCode = error.code;
+                const errorMessage = error.message;
+            // The email of the user's account used.
+                const email = error.customData.email;
+            // The AuthCredential type that was used.
+                const credential = GoogleAuthProvider.credentialFromError(error);
+            // ...
+            });
+        })
+      </script>
 </body>
 </html>
