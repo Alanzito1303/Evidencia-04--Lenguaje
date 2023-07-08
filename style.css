@@ -268,12 +268,20 @@ footer {
     transform: scale(1.01);
 }
 
-#singup_with_fb {
+#singin_with_fb{
     background-color: rgb(87, 118, 202);
 }
 
-#singup_with_google {
-    background-color: lightgreen;
+.login #singin_with_google {
+    background-color: lightslategray;
+    border: none;
+    padding: 20px 15px;
+    color: white;
+}
+
+.login #singin_with_google:hover {
+    transform: scale(1.01);
+    cursor: pointer;
 }
 
 @media (max-width:1920px) {
@@ -302,6 +310,7 @@ footer {
         margin-left: 0.5em;
         margin-right: 0.5em;
         font-size: 1.5em;
+        
     }
 
     .registro button {
@@ -314,6 +323,7 @@ footer {
         border: none;
         color: white;
         width: 500px;
+        cursor: pointer;
     }
 
     header nav a {
@@ -354,7 +364,7 @@ footer {
     }
 
     .menu_main {
-        margin-top: 20em;
+        margin-top: 14.5em;
         margin-left: 2em;
         margin-right: 2em;
         text-align: justify;
@@ -368,16 +378,15 @@ footer {
     .login .iniciar_sesion {
         padding: 20px 15px;
         width: 500px;
-        border-radius: 15px;
         margin-top: 10px;
         border: none;
         outline: 0px;
-        font-size: 1.5vw;
+        font-size: 2vw;
         background-color: #E63763;
         color: white;
-        box-shadow: 0 0 5px 0 black;
         cursor: pointer;
         letter-spacing: 5px;
+        cursor: pointer;
     }
 
     .login .iniciar_sesion:hover {
@@ -387,8 +396,8 @@ footer {
     .login {
         background-color: white;
         text-align: center;
-        border-radius: 15px;
         padding: 40px;
+        margin-top: -4em;
         margin-left: 3em;
         margin-right: 1em;
     }
@@ -399,7 +408,8 @@ footer {
         width: 500px;
         border: 2px solid lightslategray;
         outline: 0px;
-        border-radius: 15px;
+        font-size: 2em;
+        
     }
 
     .logo_texto p {
@@ -407,8 +417,41 @@ footer {
         font-style: italic;
         font-weight: bolder;   
     }
+
+    .login #singin_with_fb {
+        padding: 20px 15px;
+        width: 500px;
+        margin-top: 10px;
+        border: none;
+        outline: 0px;
+        font-size: 2vw;
+        color: white;
+        cursor: pointer;
+        letter-spacing: 5px;
+    }
+
+    .login #singin_with_fb:hover {
+        transform: scale(1.01);
+    }
+
+    .login #singin_with_google {
+        font-size: 2vw;
+        width: 500px;
+        margin-top: 10px;
+    }
 }
 @media (max-width:1280px) {
+    
+    .login {
+        background-color: transparent;
+        margin-top: 0em;
+    }
+
+    .login #singin_with_fb {
+        width: 400px;
+        font-size: 1.3em;
+    }
+
     .registro label {
         font-size: 1.5em;
         padding: 10px 5px;
@@ -478,6 +521,7 @@ footer {
 
     .login .iniciar_sesion {
         width: 400px;
+        font-size: 1.3em;
     }
 
     .logo_texto p {
@@ -488,7 +532,7 @@ footer {
 
     .login input {
         width: 400px;
-        font-size: 2vw;
+        font-size: 1.3em;
     }
 
     .section-1 p {
@@ -500,11 +544,32 @@ footer {
     }
 
     .menu_main {
-        margin-top: 15em;
+        margin-top: 12em;
+    }
+
+    .login #singin_with_google {
+        font-size: 1.3em;
+        width: 400px;
+        margin-top: 10px;
     }
 }
 
 @media (max-width:1024px) {
+    .login #singin_with_google {
+        font-size: 1.3em;
+        width: 300px;
+        margin-top: 10px;
+    }
+    
+    .login {
+        background-color: transparent;
+        margin-top: -3em;
+    }
+
+    .login #singin_with_fb {
+        width: 300px;
+        font-size: 1.3em;
+    }
     .registro label {
         font-size: 1.5em;
         padding: 10px 5px;
@@ -568,7 +633,7 @@ footer {
 
     .login .iniciar_sesion {
         width: 300px;
-        font-size: 2vw;
+        font-size: 1.3em;
     }
 
 }
@@ -576,6 +641,21 @@ footer {
 /* Surface Pro 7 */
 
 @media (max-width:912px) {
+    .login #singin_with_google {
+        font-size: 2.5em;
+        width: 450px;
+        margin-top: 10px;
+    }
+    .login {
+        background-color: transparent;
+        margin-top: 0.5em;
+    }
+
+    .login #singin_with_fb {
+        width: 450px;
+        font-size: 2.5em;
+    }
+
     .registro label {
         font-size: 2em;
         padding: 10px 5px;
@@ -678,17 +758,19 @@ footer {
     }
 
     .login {
-        margin-top: 5em;
+        margin-top: 0em;
+        margin-left: 0.5em;
+        margin-right: 0.5em;
     }
 
     .login input {
         width: 450px;
-        font-size: 2em;
+        font-size: 2.5em;
     }
 
     .login .iniciar_sesion {
         width: 450px;
-        font-size: 2em;
+        font-size: 2.5em;
     }
 
     .logo_texto p {
@@ -701,6 +783,24 @@ footer {
 /* ¡Pad Air */
 
 @media (max-width:820px) {
+    .login #singin_with_google {
+        font-size: 2.5em;
+        width: 500px;
+        margin-top: 10px;
+    }
+
+    .login {
+        background-color: transparent;
+        margin-top: 0.5em;
+        margin-left: 0.5em;
+        margin-right: 0.5em;
+    }
+
+    .login #singin_with_fb {
+        width: 500px;
+        font-size: 2.5em;
+    }
+
     .registro label {
         font-size: 2em;
         padding: 10px 5px;
@@ -764,6 +864,24 @@ footer {
 /* ¡Pad Mini */
 
 @media (max-width:768px) {
+    .login #singin_with_google {
+        font-size: 2.5em;
+        width: 450px;
+        margin-top: 10px;
+    }
+
+    .login {
+        background-color: transparent;
+        margin-top: -1.5em;
+        margin-left: 0.5em;
+        margin-right: 0.5em;
+    }
+
+    .login #singin_with_fb {
+        width: 450px;
+        font-size: 2.5em;
+    }
+
     .registro label {
         font-size: 2em;
         padding: 10px 5px;
@@ -819,7 +937,7 @@ footer {
     }
 
     .menu_main {
-        margin-top: 8em;
+        margin-top: 5em;
         margin-left: 5em;
         margin-right: 5em;
     }
@@ -840,6 +958,17 @@ footer {
 /* Surface Duo */
 
 @media (max-width:540px) {
+    .login #singin_with_google {
+        font-size: 1.3em;
+        width: 450px;
+        margin-top: 10px;
+    }
+
+    .login #singin_with_fb {
+        width: 450px;
+        font-size: 1.3em;
+    }
+
     .registro label {
         font-size: 1.5em;
         padding: 10px 5px;
@@ -1008,20 +1137,20 @@ footer {
         padding-left: 0em;
         margin-left: 0em;
         margin-right: 0em;
-        margin-top: 3em;
+        margin-top: -2em;
         margin-bottom: 1em;
     }
 
     .login input {
-        font-size: 1em;
+        font-size: 1.3em;
     }
 
     .login .iniciar_sesion {
-        font-size: 1em;
+        font-size: 1.3em;
     }
 
     .logo_texto p {
-        font-size: 1.5em;
+        font-size: 1.2em;
     }
 
     .logo_texto {
@@ -1032,6 +1161,12 @@ footer {
 /* ¡Phone XR */
 
 @media (max-width:414px) {
+    .login #singin_with_google {
+        font-size: 1.3em;
+        width: 300px;
+        margin-top: 10px;
+    }
+
     .slider-frame {
         margin-top: 3vh;
         height: 20vh;
@@ -1087,11 +1222,28 @@ footer {
         padding: 10px 5px;
         font-weight: bolder;
     }
+
+    
+    .login {
+        background-color: transparent;
+        margin-top: 0.5em;
+    }
+
+    .login #singin_with_fb {
+        width: 300px;
+        font-size: 1.3em;
+    }
 }
 
 /* Samsung Galaxy S20 Ultra */
 
 @media (max-width:412px) {
+    .login #singin_with_google {
+        font-size: 1.3em;
+        width: 300px;
+        margin-top: 10px;
+    }
+
     .registro {
         text-align: center;
         margin-top: 10em;
@@ -1235,11 +1387,27 @@ footer {
         padding: 10px 5px;
         font-weight: bolder;
     }
+
+    
+    .login {
+        background-color: transparent;
+        margin-top: 0.5em;
+    }
+
+    .login #singin_with_fb {
+        width: 300px;
+        font-size: 1.3em;
+    }
 }
 
 /* ¡Phone Pro */
 
 @media (max-width:390px) {
+    .login #singin_with_google {
+        font-size: 1.3em;
+        width: 300px;
+        margin-top: 10px;
+    }
 
     header {
         font-size: 5vw;
@@ -1251,6 +1419,10 @@ footer {
 
     footer {
         font-size: 6vw;
+    }
+
+    .logo_texto {
+        margin-top: -1em;
     }
 
     .registro {
@@ -1284,6 +1456,16 @@ footer {
         font-size: 0.8em;
         padding: 10px 5px;
         font-weight: bolder;
+    }
+
+    .login {
+        background-color: transparent;
+        margin-top: 0em;
+    }
+
+    .login #singin_with_fb {
+        width: 300px;
+        font-size: 1.3em;
     }
 }
 
@@ -1326,6 +1508,27 @@ footer {
         padding: 10px 5px;
         font-weight: bolder;
     }
+
+    .logo_texto p {
+        font-size: 1em;
+        margin-top: 5em;
+    }
+
+    .login {
+        background-color: transparent;
+        margin-top: -2em;
+    }
+
+    .login #singin_with_fb {
+        width: 300px;
+        font-size: 1.3em;
+    }
+
+    .login #singin_with_google {
+        font-size: 1.3em;
+        width: 300px;
+        margin-top: 10px;
+    }
 }
 
 /* Samsung Galaxy S8 */
@@ -1346,11 +1549,22 @@ footer {
     }
 
     .menu_main {
-        margin-top: -1em;
+        margin-top: 0em;
+    }
+
+    .login {
+        background-color: transparent;
+        margin-top: -0.5em;
+    }
+
+    .login #singin_with_fb {
+        font-size: 1.3em;
+        width: 300px;
     }
 
     .logo_texto p {
         font-size: 1.3em;
+        margin-top: 3.5em;
     }
 
     .registro {
@@ -1376,7 +1590,7 @@ footer {
         font-size: 1.2em;
         width: 328px;
         background-color: #E63763;
-        color: rgb(40, 40, 40);
+        color: white;
         border: none;
     }
 
@@ -1384,6 +1598,12 @@ footer {
         font-size: 0.8em;
         padding: 10px 5px;
         font-weight: bolder;
+    }
+
+    .login #singin_with_google {
+        font-size: 1.3em;
+        width: 300px;
+        margin-top: 10px;
     }
 }
 
@@ -1464,17 +1684,34 @@ footer {
         margin-right: 0.5em;
     }
 
+    .login {
+        background-color: transparent;
+        margin-top: -1em;
+    }
+
     .login input {
-        width: 200px;
+        width: 220px;
     }
 
     .login .iniciar_sesion {
-        width: 200px;
+        width: 220px;
         font-size: 1em;
+    }
+
+    .login #singin_with_fb {
+        width: 220px;
+        font-size: 1em;
+    }
+
+    .logo_texto {
+        width: 220px;
+        margin-left: 1.2em;
+        margin-right: 1.2em;
     }
 
     .logo_texto p {
         font-size: 1em;
+        margin-top: 4.5em;
     }
 
     .registro {
@@ -1506,5 +1743,11 @@ footer {
         font-size: 0.7em;
         padding: 10px 5px;
         font-weight: bolder;
+    }
+
+    .login #singin_with_google {
+        width: 220px;
+        font-size: 1em;
+        margin-top: 10px;
     }
 }

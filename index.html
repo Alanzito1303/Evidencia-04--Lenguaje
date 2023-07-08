@@ -3,11 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Dingo Dong | Inicio</title>
+    <title>Dingo Dong | Registro</title>
     <link rel="stylesheet" href="style.css">
     <link rel="icon" href="img/My project-1 (5).png">
 </head>
-
 <body>
     <header>
         <a href="index.html"><img src="img/My project-1 (5).png" alt=""></a>
@@ -17,101 +16,24 @@
           </svg></a>
 
         <nav class="nav__links" id="menu">
-            <a href="index.html" class="nav__link">INICIO</a>
-            <a href="#" class="nav__link">CURSOS</a>
-            <a href="#" class="nav__link">RECURSOS</a>
+            <a href="index.html" class="nav__link">REGISTRATE</a>
+            <a href="login.html" class="nav__link">INICIA SESIÓN</a>
         </nav>
     </header>
 
-    <div class="slider-frame">
-        <ul>
-            <li><img src="img/painting-3995999.jpg" alt=""></li>
-
-            <li><img src="img/composing-2391033.jpg" alt=""></li>
-
-            <li><img src="img/phra-nakhon-si-ayutthaya-1822502.jpg" alt=""></li>
-
-            <li><img src="img/island-7232868.png" alt=""></li>
-        </ul>
-    </div>
-
-    <main>
-
-        <div class="Text_1">
-            <h2>Nivel Básico</h2>
-
-            <img src="img/camping-7856198.jpg" alt="">
-
-            <p>Exploración de materiales:
-                <br> <br>
-                Familiarízate con una variedad de materiales artísticos, como lápices, acuarelas, acrílicos, óleos y pastel.
-                Experimenta con diferentes técnicas y efectos que puedes lograr con cada material.
-                Practica trazos y pinceladas básicas para desarrollar habilidades de manejo de herramientas.
-
-               
-                 <br>
-
-                <div class="text-oculto">
-                    Fundamentos del arte: 
-                    <br><br>
-                    Aprende los elementos básicos del arte, como la composición, el color, la forma y el espacio.
-                    Estudia la teoría del color y cómo mezclar colores primarios para obtener una paleta armoniosa.
-                    Practica la observación y la representación de objetos simples, naturaleza muerta y paisajes.
-                </div></p>
-
-            <a href="">Ver más</a>
-        </div>
-
-
-        <div class="Text_2">
-
-            <h2>Nivel Intermedio</h2>
-
-            <img src="img/house-7532959.jpg" alt="">
-
-            <p>Desarrollo de estilo propio:
-                <br><br>
-                Descubre tus temas y motivos preferidos en el arte y expresa tu propia visión y emociones a través de tus obras.
-                Explora diferentes enfoques y técnicas para crear un estilo único y reconocible.
-                Recopila referencias e inspiración de diversas fuentes, como la naturaleza, la cultura o tus propias experiencias. <br>
-
-                <div class="text-oculto">
-                    Técnicas avanzadas:
-                    <br><br>
-Profundiza en técnicas avanzadas de pintura, como el glaseado, el empaste y el esgrafiado.
-Experimenta con la aplicación de texturas y el uso de diferentes herramientas, como pinceles, espátulas o cuchillos de pintura.
-Aprende a crear efectos especiales y jugar con luces y sombras para agregar profundidad a tus obras.
-                </div></p>
-
-            <a href="">Ver más</a>
-        </div>
-
-        <div class="Text_3">
-            <h2>Nivel Avanzado</h2>
-
-            <img src="img/sailing-ship-659758.jpg" alt="">
-
-            <p>Investigación y experimentación:
-                <br><br>
-                Investiga nuevos materiales, medios y técnicas emergentes en el arte contemporáneo.
-                Experimenta con combinaciones de medios mixtos, instalaciones o arte digital para expandir tus posibilidades creativas.
-                Desafía los límites tradicionales del arte y busca nuevas formas de expresión personal. <br>
-
-            <div class="text-oculto">
-                Desarrollo de una serie:
-                <br><br>
-Crea una serie de obras de arte que tengan una temática o un concepto común.
-Explora a fondo un tema o una idea en diferentes enfoques y formatos, manteniendo una coherencia visual y conceptual.
-Busca retroalimentación y críticas constructivas para mejorar y refinar tu serie de obras.
-            </div></p>
-
-            <a href="">Ver más</a>
-        </div>
-    </main>
-
-    <div class="section-1">
-        <h3>!Únete ahora!</h3>
-        <p>¡Descubre tu pasión por el arte y únete a nuestros cursos! Explora tu creatividad, desarrolla tus habilidades y sumérgete en el mundo del arte. Ya seas un principiante o un artista en crecimiento, nuestros cursos ofrecen un ambiente acogedor y estimulante donde podrás aprender los fundamentos del arte, experimentar con diversas técnicas y materiales, y conectarte con una comunidad artística apasionada. ¡Inscríbete ahora y comienza tu viaje artístico junto a nosotros! Para más información, visita nuestro sitio web o contáctanos directamente. ¡Te esperamos con entusiasmo para desatar tu potencial creativo!</p>
+    <div class="registro">
+        <form id="registro">
+            <label for="email">INGRESA TU EMAIL</label>
+        <br>
+        <input type="email" id="email" placeholder="example@gmail.com" >
+        <br>
+        <label for="password">INGRESA TU CONTRASEÑA</label>
+        <br>
+        <input type="password" id="password" placeholder="Contraseña" >
+        <br>
+        <button id="singup" onclick="return validar();">Registrar con correo electrónico</button>
+        </form>
+        
     </div>
 
     <footer>
@@ -132,5 +54,50 @@ Busca retroalimentación y críticas constructivas para mejorar y refinar tu ser
               </svg></a>
         </div>
     </footer>
+
+    <script type="module">
+        // Import the functions you need from the SDKs you need
+        import { initializeApp } from "https://www.gstatic.com/firebasejs/10.0.0/firebase-app.js";
+        import {getAuth, createUserWithEmailAndPassword} from "https://www.gstatic.com/firebasejs/10.0.0/firebase-auth.js";
+
+        // TODO: Add SDKs for Firebase products that you want to use
+        // https://firebase.google.com/docs/web/setup#available-libraries
+
+        // Your web app's Firebase configuration
+        const firebaseConfig = {
+          apiKey: "AIzaSyDGu-viLYb69HshT58BOjDlPpKtlMpdq0I",
+          authDomain: "autenticacion-dingo-dong.firebaseapp.com",
+          projectId: "autenticacion-dingo-dong",
+          storageBucket: "autenticacion-dingo-dong.appspot.com",
+          messagingSenderId: "380047822054",
+          appId: "1:380047822054:web:450b572c122fccb3533f27"
+        };
+
+        // Initialize Firebase
+        const app = initializeApp(firebaseConfig);
+        const auth = getAuth(app);
+        
+
+        document.getElementById("singup").addEventListener("click",function(){
+            const email = document.getElementById("email").value
+            const password = document.getElementById("password").value
+            
+            createUserWithEmailAndPassword(auth, email, password)
+            .then((userCredential) => {
+            // Signed in 
+            const user = userCredential.user;
+            // ...
+                console.log("Creado")
+            })
+            .catch((error) => {
+            const errorCode = error.code;
+            const errorMessage = error.message;
+            // ..
+                console.log(errorCode + errorMessage)
+            });
+            })
+
+      </script>
+      <script src="code.js"></script>
 </body>
 </html>
